@@ -2,7 +2,7 @@ import React from "react";
 import Base from "../core/Base";
 import { useState } from "react";
 import { isAuthenticated, signin, authenticate } from "../auth/helper";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const Signin = () => {
   const [values, setValues] = useState({
@@ -28,7 +28,8 @@ const Signin = () => {
   const loadingMessage = (
     <div
       className="alert alert-info"
-      style={{ display: loading ? "block" : "none" }}>
+      style={{ display: loading ? "block" : "none" }}
+    >
       <div className="text-center">Loading...</div>
     </div>
   );
@@ -36,10 +37,10 @@ const Signin = () => {
   const errorMessage = (
     <div
       className="alert alert-danger"
-      style={{ display: error ? "block" : "none" }}>
+      style={{ display: error ? "block" : "none" }}
+    >
       {error}
-    
-      </div>
+    </div>
   );
 
   const onSubmit = (event) => {
@@ -65,9 +66,9 @@ const Signin = () => {
   const performRedirect = () => {
     if (didRedirect) {
       if (user && user.role === 1) {
-        return <p>redirect to admin</p>;
+        return <Redirect to="/admin/dashboard" />;
       } else {
-        return <p>redirect to user dashboard</p>;
+        return <Redirect to="/user/dashboard" />;
       }
     }
     if (isAuthenticated()) {

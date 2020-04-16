@@ -3,6 +3,10 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./core/Home"
 import Signup from "./user/Signnup";
 import Signin from "./user/Signin";
+import AdminRoute from "./auth/helper/AdminRoute";
+import PrivateRoute from "./auth/helper/PrivateRoute";
+import AdminDashboard from "./user/AdminDashboard";
+import UserDashboard from "./user/UserDashboard";
 
 export default function Routes() {
   
@@ -13,7 +17,8 @@ export default function Routes() {
           <Route path="/" exact component={Home} />
           <Route path="/signup"  component={Signup} />
           <Route path="/signin"  component={Signin} />
-
+          <AdminRoute path="/admin/dashboard"  component={AdminDashboard} />
+          <PrivateRoute path="/user/dashboard"  component={UserDashboard} />
 
         </Switch>
       </BrowserRouter>
