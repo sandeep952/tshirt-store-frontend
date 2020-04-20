@@ -8,6 +8,9 @@ import PrivateRoute from "./auth/helper/PrivateRoute";
 import AdminDashboard from "./user/AdminDashboard";
 import UserDashboard from "./user/UserDashboard";
 import CreateCategory from "./admin/CreateCategory";
+import ManageCategories from "./admin/ManageCategories";
+import AddProduct from "./admin/AddProduct";
+import ManageProducts from "./admin/ManageProducts";
 
 export default function Routes() {
   
@@ -21,7 +24,10 @@ export default function Routes() {
           <AdminRoute path="/admin/dashboard"  component={AdminDashboard} />
           <PrivateRoute path="/user/dashboard"  component={UserDashboard} />
           <PrivateRoute path="/admin/category/create"  component={CreateCategory} />
-
+          <PrivateRoute path="/admin/categories"  component={ManageCategories} />
+          <PrivateRoute path="/admin/product/create"  component={AddProduct} />
+          <PrivateRoute path="/admin/products"  component={ManageProducts} />
+       
         </Switch>
       </BrowserRouter>
     </div>

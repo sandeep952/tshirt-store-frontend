@@ -14,12 +14,17 @@ export default function AdminDashboard() {
           </Link>
         </li>
         <li className="list-group-item">
-          <Link className="text-success nav-link" to="">
+          <Link className="text-success nav-link" to="/admin/categories">
+            Manage categories
+          </Link>
+        </li>
+        <li className="list-group-item">
+          <Link className="text-success nav-link" to="/admin/product/create">
             Create product
           </Link>
         </li>
         <li className="list-group-item">
-          <Link className="text-success nav-link" to="">
+          <Link className="text-success nav-link" to="/admin/products">
             Manage Product
           </Link>
         </li>

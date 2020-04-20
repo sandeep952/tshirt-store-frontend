@@ -3,6 +3,7 @@ import Base from "../core/Base";
 import { useState } from "react";
 import { isAuthenticated, signin, authenticate } from "../auth/helper";
 import { Redirect } from "react-router-dom";
+import LoadingSpinner from "../core/LoadingSpinner";
 
 const Signin = () => {
   const [values, setValues] = useState({
@@ -25,14 +26,7 @@ const Signin = () => {
     };
   };
 
-  const loadingMessage = (
-    <div
-      className="alert alert-info"
-      style={{ display: loading ? "block" : "none" }}
-    >
-      <div className="text-center">Loading...</div>
-    </div>
-  );
+
 
   const errorMessage = (
     <div
@@ -112,7 +106,7 @@ const Signin = () => {
     <Base title="Sign in page" description="Login to your account">
       {signInForm}
       {performRedirect()}
-      {loadingMessage}
+      <LoadingSpinner loading={loading}/>
     </Base>
   );
 };
