@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Product = ({ name, description, price, deleteProductHandler }) => (
+const Product = ({ name, description, price, deleteProductHandler,productId }) => (
   <div className="col-lg-4 col-md-6">
     <div className="card m-4">
       <img className="card-img-top" alt="img" src="..." />
@@ -12,7 +12,7 @@ const Product = ({ name, description, price, deleteProductHandler }) => (
         <p className="card-text">{description}</p>
         <h5 className="display-5 ">$ {price}</h5>
         <button className="btn btn-success p-2 m-2">
-          <Link className="text-white" to="admin/products/update">Update</Link>
+          <Link className="text-white" to={`/admin/product/update/${productId}`}>Update</Link>
         </button>
         <button
           className="btn btn-danger p-2 m-2"

@@ -70,6 +70,7 @@ const ManageProducts = () => {
           return (
             <Product
               key={product._id}
+              productId={product._id}
               name={product.name}
               description={product.description}
               price={product.price}

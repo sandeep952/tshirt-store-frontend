@@ -11,6 +11,7 @@ import CreateCategory from "./admin/CreateCategory";
 import ManageCategories from "./admin/ManageCategories";
 import AddProduct from "./admin/AddProduct";
 import ManageProducts from "./admin/ManageProducts";
+import UpdateProduct from "./admin/UpdateProduct";
 
 export default function Routes() {
   
@@ -23,11 +24,12 @@ export default function Routes() {
           <Route path="/signin"  component={Signin} />
           <AdminRoute path="/admin/dashboard"  component={AdminDashboard} />
           <PrivateRoute path="/user/dashboard"  component={UserDashboard} />
-          <PrivateRoute path="/admin/category/create"  component={CreateCategory} />
-          <PrivateRoute path="/admin/categories"  component={ManageCategories} />
-          <PrivateRoute path="/admin/product/create"  component={AddProduct} />
-          <PrivateRoute path="/admin/products"  component={ManageProducts} />
-       
+          <PrivateRoute path="/admin/category/create"  exact component={CreateCategory} />
+          <PrivateRoute path="/admin/categories"  exact component={ManageCategories} />
+          <PrivateRoute path="/admin/product/create"  exact component={AddProduct} />
+          <PrivateRoute path="/admin/products"  exact component={ManageProducts} />
+          <PrivateRoute path="/admin/product/update/:productId"  exact component={UpdateProduct} />
+
         </Switch>
       </BrowserRouter>
     </div>
