@@ -55,8 +55,8 @@ const Nav = ({ history }) => {
         <li className="nav-item">
           <Link
             className="nav-link"
-            style={activeTab(history, "/cart")}
-            to="/cart"
+            style={activeTab(history, "/Cart")}
+            to="/Cart"
           >
             Cart
           </Link>
