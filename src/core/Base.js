@@ -6,16 +6,18 @@ const Base = ({
   className = " bg-dark p-3 my-3",
   children
 }) => (
-  <div>
+  <div className="page-container">
+
     <Nav />
 
-    <div className="container-fluid">
+    <div className="container-fluid p-5">
       <div className="jumbotron bg-dark text-white text-center">
         <h2 className="display-5">{title}</h2>
         <p className="lead">{description} </p>
       </div>
       <div className={className}>{children}</div>
     </div>
+
     <footer className="footer bg-dark mt-auto py-4 text-center">
       <div className="container-fluid bg-success text-white p-3">
         <h4>If you have any questions</h4>
