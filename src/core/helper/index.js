@@ -6,7 +6,6 @@ export const getAllProducts = () => {
     .then((res) => {
       return res.json();
     })
-    .catch((err) => console.log(err));
 };
 
 export const getProductPhoto = (productId) => {

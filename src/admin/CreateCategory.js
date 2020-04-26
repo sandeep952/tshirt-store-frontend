@@ -3,12 +3,13 @@ import Base from "../core/Base";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { createCategory } from "./helper/adminPanel";
+import LoadingSpinner from "../core/LoadingSpinner";
 
 const CreateCategory = () => {
   const [name, setName] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
-
+  const [loading,setLoading] = useState(false)
   const handleChange = (event) => {
     setError("");
     setName(event.target.value);
@@ -18,22 +19,24 @@ const CreateCategory = () => {
     event.preventDefault();
     setError("");
     setSuccess("");
+    setLoading(true)
 
     createCategory({ name })
       .then((data) => {
         if (data.error) {
           setSuccess(false);
           setError(data.error);
-          console.log(data.error);
+          setLoading(false)
         } else {
           setName("");
           setError("");
           setSuccess(true);
+          setLoading(false)
         }
       })
       .catch((err) => {
-        setError(err);
-        console.log(err);
+        setError(err.message);
+        setLoading(false)
       });
   };
 
@@ -72,6 +75,7 @@ const CreateCategory = () => {
         />
         <input type="submit" className="btn btn-danger" value="Submit" />
       </div>
+      <LoadingSpinner loading={loading}/>
     </form>
   );
   return (

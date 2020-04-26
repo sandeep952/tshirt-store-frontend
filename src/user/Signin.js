@@ -7,8 +7,8 @@ import LoadingSpinner from "../core/LoadingSpinner";
 
 const Signin = () => {
   const [values, setValues] = useState({
-    email: "sandeep@gmail.com",
-    password: "12345",
+    email: "",
+    password: "",
     error: false,
     loading: false,
     didRedirect: false,

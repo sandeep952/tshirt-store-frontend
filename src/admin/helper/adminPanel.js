@@ -16,7 +16,6 @@ export const createCategory = (category) => {
     .then((response) => {
       return response.json();
     })
-    .catch((err) => console.log(err));
 };
 
 //get all categories
