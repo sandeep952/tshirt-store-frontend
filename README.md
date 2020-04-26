@@ -1,3 +1,6 @@
+A simple e-commerce website in React with admin panel
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
